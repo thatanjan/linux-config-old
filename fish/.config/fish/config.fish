@@ -63,7 +63,7 @@ alias gl='git log'
 alias gm='git merge'
 
 alias v='nvim'
-alias nvcon='nvim ~/.config/nvim/init.vim'
+alias nvcon='nvim ~/.config/nvim/init.lua'
 alias picoc='nvim ~/.config/picom/picom.conf'
 alias alac='nvim ~/.config/alacritty/alacritty.yml'
 
