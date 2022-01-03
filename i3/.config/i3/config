@@ -12,7 +12,7 @@ floating_modifier $super
 exec --no-startup-id xsettingsd &
 exec --no-startup-id dunst
 exec_always --no-startup-id picom --config ~/.config/picom/picom.conf 
-exec_always --no-startup-id feh --bg-fill '/home/anjan/wallpapers/used/anime_20.jpg'
+exec_always --no-startup-id feh --bg-fill '/home/anjan/wallpapers/anime_20.jpg'
 exec_always --no-startup-id brave-browser-nightly
 
 exec_always --no-startup-id echo "" >> ~/.config/picom/picom.conf
