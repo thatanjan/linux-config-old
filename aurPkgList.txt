@@ -1,0 +1,16 @@
+autotiling
+brave-nightly-bin
+freetube-bin
+git-cola
+iriunwebcam-bin
+linux59
+neovim-nightly-bin
+networkmanager-dmenu-git
+ookla-speedtest-bin
+picom-jonaburg-fix
+python-ueberzug-git
+stacer
+ttf-material-icons-git
+visual-studio-code-bin
+webtorrent-desktop-bin
+woeusb-gui
