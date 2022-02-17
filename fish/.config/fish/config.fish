@@ -67,6 +67,8 @@ alias nvcon='nvim ~/.config/nvim/init.lua'
 alias picoc='nvim ~/.config/picom/picom.conf'
 alias alac='nvim ~/.config/alacritty/alacritty.yml'
 
+alias v2='nvim -u ~/linux-config/nvim2/.config/nvim2/init.vim'
+
 alias po='poweroff'
 alias rbt='reboot'
 
