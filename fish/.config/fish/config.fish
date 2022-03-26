@@ -82,6 +82,14 @@ alias ya='yarn add'
 alias liconv='v ~/linux-config'
 alias cdlico='cd ~/linux-config'
 
+alias arch='sudo mount /dev/sda10 /mnt/arch'
+alias uarch='sudo umount /mnt/arch'
+alias cdarch='cd /mnt/arch/home/anjan'
+
+alias arco='sudo mount /dev/sda13 /mnt/arco'
+alias uarco='sudo umount /mnt/arco'
+alias cdarco='cd /mnt/arco/home/anjan'
+
 set PATH /home/anjan/.local/bin $PATH
 set PATH /home/anjan/.yarn/bin $PATH
 set PATH /home/anjan/.emacs.d/bin $PATH
@@ -91,3 +99,4 @@ set PATH /home/anjan/.cargo/bin $PATH
 set -x QT_STYLE_OVERIDE GTK+
 set -x QT_QPA_PLATFORMTHEME qt5ct
 
+# set -U $budspencer_pwdstyle long
