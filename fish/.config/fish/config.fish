@@ -29,17 +29,13 @@ alias cdcc='cd ~/git_projects/cules-coding'
 alias ccv='cd ~/git_projects/cules-coding && v .'
 alias ccs='cd ~/git_projects/cules-coding && yarn dev'
 
-alias cdcp='cd ~/git_projects/cules-player/'
-alias cps='cd ~/git_projects/cules-player/ && yarn start'
-alias cpv='cd ~/git_projects/cules-player/ && v .'
-
 alias cdbr='cd ~/git_projects/youtube-demo-projects-source-code/boring-company'
 alias brs='cd ~/git_projects/youtube-demo-projects-source-code/boring-company && live-server .'
 alias brv='cd ~/git_projects/youtube-demo-projects-source-code/boring-company && v .'
 
-alias cdhl='cd ~/git_projects/hulu-clone/'
-alias hls='cd ~/git_projects/hulu-clone/ &&  live-server .'
-alias hlv='cd ~/git_projects/hulu-clone/ && v .'
+alias xboxv='cd ~/git_projects/xbox-clone-react-demo/ && v .'
+alias xboxdv='cd ~/git_projects/xbox-clone && v .'
+alias xboxs='cd ~/git_projects/xbox-clone-react-demo/ && yarn start'
 
 alias ga='git add'
 alias gs='git status'
@@ -95,8 +91,38 @@ set PATH /home/anjan/.yarn/bin $PATH
 set PATH /home/anjan/.emacs.d/bin $PATH
 set PATH /var/lib/snapd/snap/bin $PATH
 set PATH /home/anjan/.cargo/bin $PATH
+# set PATH /.emacs.d/bin $PATH
+# set PATH /home/anjan/.emacs.d/bin $PATH
 
 set -x QT_STYLE_OVERIDE GTK+
 set -x QT_QPA_PLATFORMTHEME qt5ct
 
 # set -U $budspencer_pwdstyle long
+
+# for oh my posh
+oh-my-posh init fish --config ~/.poshthemes/marcduiker.omp.json | source
+
+set -g fish_key_bindings fish_vi_key_bindings
+
+function fish_mode_prompt
+  switch $fish_bind_mode
+    case default
+      set_color --bold red
+      echo ''
+    case insert
+      set_color --bold green
+      echo ''
+    case replace_one
+      set_color --bold green
+      echo ''
+    case visual
+      set_color --bold brmagenta
+      echo ''
+    case '*'
+      set_color --bold red
+      echo '?'
+  end
+  set_color normal
+end
+
+
