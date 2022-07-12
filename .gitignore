@@ -2,3 +2,4 @@ kitty/.config/kitty/theme.conf
 polybar/
 github-copilot/
 ranger/.config/ranger/plugins/
+__pycache__/
