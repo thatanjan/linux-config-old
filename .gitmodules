@@ -1,5 +1,5 @@
 [submodule "nvim/.config/nvim"]
-	path = nvim/.config/nvim
+	path = nvim.old/.config/nvim
 	url = https://github.com/thatanjan/neovim-config
 [submodule "kitty/.config/kitty/kitty-themes"]
 	path = kitty/.config/kitty/kitty-themes
