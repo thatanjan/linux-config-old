@@ -12,7 +12,7 @@ floating_modifier $super
 exec --no-startup-id xsettingsd &
 exec --no-startup-id dunst
 exec_always --no-startup-id picom --config ~/.config/picom/picom.conf 
-exec_always --no-startup-id feh --bg-fill '/home/anjan/wallpapers/space_4.jpg'
+exec_always --no-startup-id feh --bg-fill '/home/anjan/wallpapers/anime_22.jpg'
 exec_always --no-startup-id brave-browser-nightly
 
 exec_always --no-startup-id echo "" >> ~/.config/picom/picom.conf
@@ -25,8 +25,7 @@ exec_always --no-startup-id start-pulseaudio-x11
 # bindsym $super+Return exec alacritty
 bindsym $super+Return exec kitty
 
-bindsym $super+d exec rofi  -show drun --show-icons -icon-theme MY_ICON_THEME -lines 12 -padding 18 -width 60 -location 0 -show drun -sidebar-mode -columns 3 -font 'Noto Sans 8' -theme ~/.local/share/rofi/themes/spotlight.rasi
-
+bindsym $super+d exec rofi -show drun
 
 # common apps keybinds
 bindsym Print exec scrot 'Cheese_%a-%d%b%y_%H.%M.png' -e 'viewnior ~/$f'
@@ -37,7 +36,7 @@ bindsym $super+Shift+m exec deadbeef
 bindsym $super+Shift+t exec tor-browser
 bindsym $super+Alt+k exec kdenlive 
 bindsym $super+Alt+a exec audacity
-bindsym $super+Alt+n exec nemo
+bindsym $super+$alt+n exec nemo
 
 # Turn keyboard lights on
 bindsym Scroll_Lock exec xset led on    
