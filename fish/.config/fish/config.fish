@@ -39,7 +39,7 @@ alias xboxs='cd ~/git_projects/xbox-clone-react-demo/ && yarn start'
 
 alias ga='git add'
 alias gs='git status'
-alias gd='git diff | bat --diff'
+alias gd='git diff'
 alias gcl='git clone'
 alias gba='git branch -a'
 alias gc='git checkout'
@@ -78,7 +78,7 @@ alias ya='yarn add'
 alias liconv='v ~/linux-config'
 alias cdlico='cd ~/linux-config'
 
-alias arch='sudo mount /dev/sda10 /mnt/arch'
+alias arch='sudo mount /dev/sda12 /mnt/arch'
 alias uarch='sudo umount /mnt/arch'
 alias cdarch='cd /mnt/arch/home/anjan'
 
@@ -86,11 +86,19 @@ alias arco='sudo mount /dev/sda13 /mnt/arco'
 alias uarco='sudo umount /mnt/arco'
 alias cdarco='cd /mnt/arco/home/anjan'
 
+alias qcon='nvim ~/.config/qtile/config.py'
+
+
+# for vim
+alias oldv='cd  ~/linux-config/nvim.old/.config/nvim/ && nvim .'
+alias newv='cd  ~/linux-config/nvim/.config/nvim/ && nvim .'
+
 set PATH /home/anjan/.local/bin $PATH
 set PATH /home/anjan/.yarn/bin $PATH
 set PATH /home/anjan/.emacs.d/bin $PATH
 set PATH /var/lib/snapd/snap/bin $PATH
 set PATH /home/anjan/.cargo/bin $PATH
+set PATH /home/anjan/.config/composer/vendor/bin $PATH
 # set PATH /.emacs.d/bin $PATH
 # set PATH /home/anjan/.emacs.d/bin $PATH
 
@@ -124,5 +132,6 @@ function fish_mode_prompt
   end
   set_color normal
 end
+
 
 
