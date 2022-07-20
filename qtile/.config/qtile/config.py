@@ -12,7 +12,7 @@ mod = "mod4"
 shift = "shift"
 ctrl = "control"
 alt = "alt"
-terminal = guess_terminal(preference='kitty')
+terminal = guess_terminal(preference="kitty")
 
 
 def run_shell_script(path):
@@ -21,6 +21,7 @@ def run_shell_script(path):
 
 def launch_rofi():
     return "bash /home/anjan/.config/qtile/scripts/rofi.sh"
+
 
 ###############################################################################
 # Key commands
@@ -34,23 +35,27 @@ keys = [
     Key([mod], "l", lazy.layout.right(), desc="Move focus to right"),
     Key([mod], "j", lazy.layout.down(), desc="Move focus down"),
     Key([mod], "k", lazy.layout.up(), desc="Move focus up"),
-    Key([mod], "space", lazy.layout.next(),
-        desc="Move window focus to other window"),
+    Key([mod], "space", lazy.layout.next(), desc="Move window focus to other window"),
     Key([mod], "f", lazy.window.toggle_fullscreen(), desc="Toggle fullscreen"),
     # Move windows between left/right columns or move up/down in current stack.
     # Moving out of range in Columns layout will create new column.
-    Key([mod, "shift"], "h", lazy.layout.shuffle_left(),
-        desc="Move window to the left"),
-    Key([mod, "shift"], "l", lazy.layout.shuffle_right(),
-        desc="Move window to the right"),
+    Key(
+        [mod, "shift"], "h", lazy.layout.shuffle_left(), desc="Move window to the left"
+    ),
+    Key(
+        [mod, "shift"],
+        "l",
+        lazy.layout.shuffle_right(),
+        desc="Move window to the right",
+    ),
     Key([mod, "shift"], "j", lazy.layout.shuffle_down(), desc="Move window down"),
     Key([mod, "shift"], "k", lazy.layout.shuffle_up(), desc="Move window up"),
     # Grow windows. If current window is on the edge of screen and direction
     # will be to screen edge - window would shrink.
-    Key([mod, "control"], "h", lazy.layout.grow_left(),
-        desc="Grow window to the left"),
-    Key([mod, "control"], "l", lazy.layout.grow_right(),
-        desc="Grow window to the right"),
+    Key([mod, "control"], "h", lazy.layout.grow_left(), desc="Grow window to the left"),
+    Key(
+        [mod, "control"], "l", lazy.layout.grow_right(), desc="Grow window to the right"
+    ),
     Key([mod, "control"], "j", lazy.layout.grow_down(), desc="Grow window down"),
     Key([mod, "control"], "k", lazy.layout.grow_up(), desc="Grow window up"),
     Key([mod], "n", lazy.layout.normalize(), desc="Reset all window sizes"),
@@ -68,19 +73,19 @@ keys = [
     # Toggle between different layouts as defined below
     Key([mod], "Tab", lazy.next_layout(), desc="Toggle between layouts"),
     Key([mod], "c", lazy.window.kill(), desc="Kill focused window"),
-    Key([mod, "shift"], "r", lazy.reload_config(), desc="Reload the config"),
+    Key([mod, "shift"], "r", lazy.reload_config(), desc="Restart Qtile"),
     Key([mod], "q", lazy.shutdown(), desc="Shutdown Qtile"),
     # Key([mod], "r", lazy.spawncmd(), desc="Spawn a command using a prompt widget"),
     Key([mod], "d", lazy.spawn(launch_rofi()), desc="Launch rofi"),
-
-
     #########################################################################
     #########################################################################
-
     # Run Custom Applications
-    Key([mod, shift], "b", lazy.spawn(
-        "brave-browser-nightly"), desc="Launch Brave Browser"),
-
+    Key(
+        [mod, shift],
+        "b",
+        lazy.spawn("brave-browser-nightly"),
+        desc="Launch Brave Browser",
+    ),
 ]
 
 groups = [Group(i) for i in "123456789"]
@@ -100,8 +105,7 @@ for group in groups:
                 [mod, "shift"],
                 group.name,
                 lazy.window.togroup(group.name, switch_group=True),
-                desc="Switch to & move focused window to group {}".format(
-                    group.name),
+                desc="Switch to & move focused window to group {}".format(group.name),
             ),
             # Or, use below if you prefer not to switch to that group.
             # # mod1 + shift + letter of group = move focused window to group
@@ -111,8 +115,7 @@ for group in groups:
     )
 
 layouts = [
-    layout.Columns(border_focus_stack=["#fff", "#fff"],
-                   border_width=2, margin=8),
+    layout.Columns(border_focus_stack=["#fff", "#fff"], border_width=3, margin=8),
     layout.Max(),
     # Try more layouts by unleashing below layouts.
     # layout.Stack(num_stacks=2),
@@ -134,8 +137,6 @@ widget_defaults = dict(
 )
 extension_defaults = widget_defaults.copy()
 
-wallpaper = "~/wallpapers/anime_8.jpg"
-
 screens = [
     Screen(
         bottom=bar.Bar(
@@ -151,8 +152,7 @@ screens = [
                     name_transform=lambda name: name.upper(),
                 ),
                 widget.TextBox("default config", name="default"),
-                widget.TextBox("Press &lt;M-r&gt; to spawn",
-                               foreground="#d75f5f"),
+                widget.TextBox("Press &lt;M-r&gt; to spawn", foreground="#d75f5f"),
                 widget.Systray(),
                 widget.Clock(format="%Y-%m-%d %a %I:%M %p"),
                 widget.QuickExit(),
@@ -167,10 +167,15 @@ screens = [
 
 # Drag floating layouts.
 mouse = [
-    Drag([mod], "Button1", lazy.window.set_position_floating(),
-         start=lazy.window.get_position()),
-    Drag([mod], "Button3", lazy.window.set_size_floating(),
-         start=lazy.window.get_size()),
+    Drag(
+        [mod],
+        "Button1",
+        lazy.window.set_position_floating(),
+        start=lazy.window.get_position(),
+    ),
+    Drag(
+        [mod], "Button3", lazy.window.set_size_floating(), start=lazy.window.get_size()
+    ),
     Click([mod], "Button2", lazy.window.bring_to_front()),
 ]
 
@@ -216,7 +221,8 @@ wmname = "LG3D"
 
 # Startup hooks
 
+
 @hook.subscribe.startup
 def autostart():
-    home = os.path.expanduser('~/.config/qtile/scripts/autostart.sh')
-    subprocess.Popen([home])
+    script_path = os.path.expanduser("~/.config/qtile/scripts/autostart.sh")
+    subprocess.Popen([script_path])
