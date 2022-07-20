@@ -229,4 +229,10 @@ def get_script_path(filename):
 @hook.subscribe.startup
 def autostart():
     autostart_script = get_script_path("autostart")
-    subprocess.call(autostart_script)
+    subprocess.Popen([autostart_script])
+
+
+@hook.subscribe.startup_once
+def startup_once():
+    startup_once_script = get_script_path("startup_once")
+    subprocess.Popen([startup_once_script])
