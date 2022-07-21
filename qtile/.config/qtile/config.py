@@ -73,7 +73,7 @@ keys = [
     # Toggle between different layouts as defined below
     Key([mod], "Tab", lazy.next_layout(), desc="Toggle between layouts"),
     Key([mod], "c", lazy.window.kill(), desc="Kill focused window"),
-    Key([mod, "shift"], "r", lazy.reload_config(), desc="Restart Qtile"),
+    Key([mod, "shift"], "r", lazy.restart(), desc="Restart Qtile"),
     Key([mod], "q", lazy.shutdown(), desc="Shutdown Qtile"),
     # Key([mod], "r", lazy.spawncmd(), desc="Spawn a command using a prompt widget"),
     Key([mod], "d", lazy.spawn(launch_rofi()), desc="Launch rofi"),
@@ -228,7 +228,7 @@ def get_script_path(filename):
 
 @hook.subscribe.startup
 def autostart():
-    autostart_script = get_script_path("autostart")
+    autostart_script = get_script_path("startup")
     subprocess.Popen([autostart_script])
 
 
