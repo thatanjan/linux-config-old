@@ -1,18 +1,14 @@
 from libqtile import bar, layout, widget
 from libqtile.config import Click, Drag, Group, Key, Match, Screen
 from libqtile.lazy import lazy
-from libqtile.utils import guess_terminal
+
 
 import os
 import subprocess
 
 from libqtile import hook
 
-mod = "mod4"
-shift = "shift"
-ctrl = "control"
-alt = "alt"
-terminal = guess_terminal(preference="kitty")
+from configs.global_vars import *
 
 
 def run_shell_script(path):
