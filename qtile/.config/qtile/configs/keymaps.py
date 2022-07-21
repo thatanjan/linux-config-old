@@ -2,7 +2,7 @@ from libqtile.config import Group, Key
 from libqtile.config import Key
 from libqtile.lazy import lazy
 
-from global_vars import *
+from .global_vars import mod, terminal, shift
 
 
 def launch_rofi():
