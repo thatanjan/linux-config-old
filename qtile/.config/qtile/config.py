@@ -1,5 +1,5 @@
-from libqtile import bar, layout, widget
-from libqtile.config import Click, Drag, Match, Screen
+from libqtile import bar, widget
+from libqtile.config import Click, Drag, Screen
 from libqtile.lazy import lazy
 
 
@@ -10,27 +10,12 @@ from libqtile import hook
 
 from configs.global_vars import *
 from configs.keymaps import *
+from configs.layouts import *
 
 
 def run_shell_script(path):
     subprocess.run(["bash", path])
 
-
-layouts = [
-    layout.Columns(border_focus_stack=["#fff", "#fff"], border_width=3, margin=8),
-    layout.Max(),
-    # Try more layouts by unleashing below layouts.
-    # layout.Stack(num_stacks=2),
-    # layout.Bsp(),
-    # layout.Matrix(),
-    # layout.MonadTall(),
-    # layout.MonadWide(),
-    # layout.RatioTile(),
-    # layout.Tile(),
-    # layout.TreeTab(),
-    # layout.VerticalTile(),
-    # layout.Zoomy(),
-]
 
 widget_defaults = dict(
     font="sans",
@@ -86,18 +71,6 @@ dgroups_app_rules = []  # type: list
 follow_mouse_focus = True
 bring_front_click = False
 cursor_warp = False
-floating_layout = layout.Floating(
-    float_rules=[
-        # Run the utility of `xprop` to see the wm class and name of an X client.
-        *layout.Floating.default_float_rules,
-        Match(wm_class="confirmreset"),  # gitk
-        Match(wm_class="makebranch"),  # gitk
-        Match(wm_class="maketag"),  # gitk
-        Match(wm_class="ssh-askpass"),  # ssh-askpass
-        Match(title="branchdialog"),  # gitk
-        Match(title="pinentry"),  # GPG key password entry
-    ]
-)
 
 auto_fullscreen = True
 focus_on_window_activation = "smart"
