@@ -86,6 +86,10 @@ keys = [
         lazy.spawn("brave-browser-nightly"),
         desc="Launch Brave Browser",
     ),
+    # For Volume
+    Key([], "F6", lazy.spawn("amixer -q set Master 5%-"), desc="Volume Down"),
+    Key([], "F7", lazy.spawn("amixer -q set Master 5%+"), desc="Volume Up"),
+    Key([], "F8", lazy.spawn("amixer -q set Master toggle"), desc="Toggle Mute"),
 ]
 
 groups = [Group(i) for i in "123456789"]
