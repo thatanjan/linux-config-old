@@ -93,6 +93,11 @@ alias qcon='nvim ~/.config/qtile/config.py'
 alias oldv='cd  ~/linux-config/nvim.old/.config/nvim/ && nvim .'
 alias newv='cd  ~/linux-config/nvim/.config/nvim/ && nvim .'
 
+
+# for Droppe
+alias droppe='cd ~/git_projects/company/droppe-one/'
+alias droppev='cd ~/git_projects/company/droppe-one/ & nvim .'
+
 set PATH /home/anjan/.local/bin $PATH
 set PATH /home/anjan/.yarn/bin $PATH
 set PATH /home/anjan/.emacs.d/bin $PATH
@@ -101,6 +106,8 @@ set PATH /home/anjan/.cargo/bin $PATH
 set PATH /home/anjan/.config/composer/vendor/bin $PATH
 # set PATH /.emacs.d/bin $PATH
 # set PATH /home/anjan/.emacs.d/bin $PATH
+
+set PATH /home/anjan/scripts/activeEarBuds.sh $PATH
 
 set -x QT_STYLE_OVERIDE GTK+
 set -x QT_QPA_PLATFORMTHEME qt5ct
